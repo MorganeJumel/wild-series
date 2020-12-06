@@ -2,11 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %} Wild Séries {% endblock %}</title>
+        <link rel="icon" href="{{ asset('build/favicon.ico') }}"/>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="/build/app.css">
+        {% endblock %}
     </head>
     <body>
+        <header>
+            {% include "_navbar.html.twig" %}
+        </header>
+        
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        {% block javascripts %}
+            <script src="/build/app.js"></script>
+        {% endblock %}
     </body>
 </html>

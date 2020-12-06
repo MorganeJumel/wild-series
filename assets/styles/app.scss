@@ -1,0 +1,28 @@
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+
+// customize some Bootstrap variables
+$theme-colors: (
+    "primary": #EFEFEF,
+    "danger": #FC5C5C
+);
+
+body {
+    background-color: #EFEFEF,;
+}
+#navbarDropdown {
+    color: #EFEFEF;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #EFEFEF;
+}
+.btn-outline-success {
+    color:#EFEFEF;
+    background-color: #f63535;
+    border-color: #e72e2e;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #f05d5d;
+    border-color: #e72e2e;
+  }
