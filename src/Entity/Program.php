@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\ProgramRepository;
+use App\Entity\Category;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProgramRepository;
 
 /**
  * @ORM\Entity(repositoryClass=ProgramRepository::class)
@@ -33,7 +34,7 @@ class Program
     private $poster;
 
     /**
-     * @ORM\ManyToOne(targetEntity=category::class)
+     * @ORM\ManyToOne(targetEntity=Category::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
@@ -79,12 +80,12 @@ class Program
         return $this;
     }
 
-    public function getCategory(): ?category
+    public function getCategory(): ?Category
     {
         return $this->category;
     }
 
-    public function setCategory(?category $category): self
+    public function setCategory(?Category $category): self
     {
         $this->category = $category;
 

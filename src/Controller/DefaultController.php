@@ -14,7 +14,7 @@ class DefaultController extends AbstractController
     public function index(): Response
     {
         
-        return $this->render('program/index.html.twig', [
+        return $this->render('index.html.twig', [
             'website' => 'Wild Series',
         ]);
     }

@@ -1,7 +1,21 @@
 {% extends "base.html.twig" %}
 
+{% block title %}All programs{% endblock %}
+
 {% block body %}
-<body>
-   <h1>Welcome to {{ website }}</h1>
-</body>
+    <h1>Every program from program table : </h1>
+    {% for program in programs %}
+        <div>
+            <h2>{{ loop.index }} / {{ program.title }} - Category : {{ program.category.name }}</h2>
+            <p>{{ program.summary }}</p>
+            {# Link to the TV show guide : #}
+            <a href="{{ path("program_show", { id: program.id }) }}">See program details</a>
+        </div>
+    {% else %}
+        No program has been found.
+    {% endfor %}
+
+    <a href="{{ path('app_index') }}">
+        Back to homepage
+    </a>
 {% endblock %}
